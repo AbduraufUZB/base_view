@@ -1,4 +1,8 @@
+import 'package:hive/hive.dart';
 
+part 'nbu_model.g.dart';
+
+@HiveType(typeId: 0)
 class NbuModel {
     NbuModel({
         this.title,
@@ -9,11 +13,17 @@ class NbuModel {
         this.date,
     });
 
+    @HiveField(0)
     String? code;
+    @HiveField(1)
     String? title;
+    @HiveField(2)
     String? cbPrice;
+    @HiveField(3)
     String? nbuBuyPrice;
+    @HiveField(4)
     String? nbuCellPrice;
+    @HiveField(5)
     String? date;
 
     factory NbuModel.fromJson(Map<String, dynamic> json) => NbuModel(

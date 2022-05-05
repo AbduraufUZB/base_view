@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:tradebitcoin/routes/routes.dart';
+import 'package:tradebitcoin/service/nbu_service.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  NbuService.registerAdapter();
+  await NbuService.openBox();
+
   runApp(const MyApp());
 }
 
